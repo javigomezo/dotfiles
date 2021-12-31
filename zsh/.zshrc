@@ -123,7 +123,7 @@ alias l='lsd -l'
 
 alias mkdir='mkdir -p'
 
-alias zshconf='vim ~/.zshrc'
+alias zconf='vim ~/.zshrc'
 alias vimconf='vim ~/.vimrc'
 
 alias nvim='vim'

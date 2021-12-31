@@ -6,7 +6,7 @@
 cd ~
 git clone git@github.com:javigomezo/dotfiles.git # Or https://github.com/javigomezo/dotfiles.git 
 cd dotfiles
-stow -nvt zsh
+stow -nvt ~ zsh
 # If everything seems right
-stow -vt zsh
+stow -vt ~ zsh
 ```

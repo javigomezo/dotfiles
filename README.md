@@ -9,5 +9,4 @@ cd dotfiles
 stow -nvt ~ zsh
 # If everything seems right
 stow -vt ~ zsh
-echo "source $HOME/.config/zsh/.zshrc" > $HOME/.zshenv
 ```

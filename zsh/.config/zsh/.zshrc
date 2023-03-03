@@ -54,6 +54,11 @@ else
   export EDITOR='nvim'
 fi
 
+if command -v nitch > /dev/null 2>&1; then
+  clear;
+  nitch
+fi
+
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

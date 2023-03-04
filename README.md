@@ -1,5 +1,9 @@
 # dotfiles
 
+# Prerequisites
+
+[GNU Stow](https://www.gnu.org/software/stow/)
+
 # How to use
 
 ```bash

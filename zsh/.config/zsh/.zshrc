@@ -2,7 +2,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# export LANG=es_ES.UTF-8
+export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export ZSH=$HOME/.config/zsh
@@ -32,7 +32,10 @@ HYPHEN_INSENSITIVE="true"
 source $ZSH/aliases/aliases.zsh
 
 # Functions
-source $ZSH/functions/fzf.zsh
+source $ZSH/functions/firefox.zsh
+if command -v fzf > /dev/null 2>&1; then
+  source $ZSH/functions/fzf.zsh
+fi
 
 # Theme
 source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
@@ -43,6 +46,10 @@ source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/tmux/tmux.plugin.zsh
 source $ZSH/plugins/sudo/sudo.plugin.zsh
 source $ZSH/plugins/kubectl/kubectl.plugin.zsh
+
+
+# bindkey
+bindkey '^R' history-incremental-search-backward
 
 
 test -r "~/.config/zsh/colors/nord_colors.zsh" && eval $(dircolors -b ~/.config/zsh/colors/nord_colors.zsh)

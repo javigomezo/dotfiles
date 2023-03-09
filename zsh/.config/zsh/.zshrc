@@ -19,6 +19,7 @@ export HISTSIZE=10000000
 export SAVEHIST=10000000
 export HISTFILE=$HOME/.zsh_history
 
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -U compinit
 autoload -Uz zcalc
 

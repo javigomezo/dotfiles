@@ -60,12 +60,12 @@ if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='nvim'
+  if command -v nitch > /dev/null 2>&1; then
+    clear;
+    nitch
+  fi
 fi
 
-if command -v nitch > /dev/null 2>&1; then
-  clear;
-  nitch
-fi
 
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.

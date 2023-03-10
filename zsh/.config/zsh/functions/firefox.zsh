@@ -1,4 +1,4 @@
 # Set firefox in wayland mode
-if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+if [ -n "${WAYLAND_DISPLAY+1}" ]; then
     export MOZ_ENABLE_WAYLAND=1
 fi

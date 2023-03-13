@@ -2,13 +2,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Load locale 
+# Load locale
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Set ZSH base path
 export ZSH=$HOME/.config/zsh
+export ZSH_CACHE_DIR=$HOME/.cache/zsh
+mkdir -p $ZSH_CACHE_DIR
 
 # Update path
 export PATH=$PATH:$HOME/.local/bin
@@ -16,7 +18,7 @@ export PATH=$PATH:$HOME/.local/share/neovim/bin
 export PATH=$PATH:$HOME/.local/share/pnpm
 export PNPM_HOME=$HOME/.local/share/pnpm
 
-# Increase zsh history 
+# Increase zsh history
 export HISTSIZE=10000000
 export SAVEHIST=10000000
 export HISTFILE=$HOME/.zsh_history
@@ -31,13 +33,11 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'" # bat man :')
 
 # Configure autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+(( ${fpath[(Ie)"$ZSH_CACHE_DIR/completions"]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
 autoload -U compinit
 autoload -Uz zcalc
 
 compinit
-
-CASE_SENSITIVE="false"
-HYPHEN_INSENSITIVE="true"
 
 
 # Aliases

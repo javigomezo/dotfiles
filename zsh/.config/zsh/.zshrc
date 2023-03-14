@@ -67,7 +67,7 @@ source $ZSH/plugins/kubectl/kubectl.plugin.zsh
 bindkey '^R' history-incremental-search-backward
 
 
-# Preferred editor for local and remote sessions and launch nitch if not in ssh
+# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
@@ -78,6 +78,11 @@ else
   fi
 fi
 
+# Nitch greetings if it is an interactive shell
+if [[ $- == *i* ]] && command -v nitch > /dev/null; then
+  clear;
+  nitch
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

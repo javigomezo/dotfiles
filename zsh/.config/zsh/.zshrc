@@ -14,6 +14,7 @@ mkdir -p $ZSH_CACHE_DIR
 
 # Update path
 export PATH=$PATH:$HOME/.local/bin
+[ -d "$HOME/.cargo/bin" ] && export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/share/neovim/bin
 export PATH=$PATH:$HOME/.local/share/pnpm
 export PNPM_HOME=$HOME/.local/share/pnpm

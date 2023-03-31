@@ -15,6 +15,7 @@ mkdir -p $ZSH_CACHE_DIR
 # Update path
 export PATH=$PATH:$HOME/.local/bin
 [ -d "$HOME/.cargo/bin" ] && export PATH=$PATH:$HOME/.cargo/bin
+[ -d "$HOME/.config/fzf/bin" ] && export PATH=$PATH:$HOME/.config/fzf/bin
 export PATH=$PATH:$HOME/.local/share/neovim/bin
 export PATH=$PATH:$HOME/.local/share/pnpm
 export PNPM_HOME=$HOME/.local/share/pnpm
@@ -38,6 +39,10 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=
 autoload -U compinit
 autoload -Uz zcalc
 
+# Configure fzf
+[[ $- == *i* ]] && source "$HOME/.config/fzf/shell/completion.zsh" 2> /dev/null
+source "$HOME/.config/fzf/shell/key-bindings.zsh"
+
 compinit
 
 
@@ -46,9 +51,6 @@ source $ZSH/aliases/aliases.zsh
 
 # Functions
 source $ZSH/functions/firefox.zsh
-if command -v fzf > /dev/null 2>&1; then
-  source $ZSH/functions/fzf.zsh
-fi
 
 # Theme
 source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
@@ -62,10 +64,6 @@ source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/tmux/tmux.plugin.zsh
 source $ZSH/plugins/sudo/sudo.plugin.zsh
 source $ZSH/plugins/kubectl/kubectl.plugin.zsh
-
-
-# Bind Ctrl+R to search history
-bindkey '^R' history-incremental-search-backward
 
 
 # Preferred editor for local and remote sessions

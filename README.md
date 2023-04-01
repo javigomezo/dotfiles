@@ -10,7 +10,16 @@
 cd ~
 git clone --recurse-submodules -j8 git@github.com:javigomezo/dotfiles.git # Or https://github.com/javigomezo/dotfiles.git 
 cd dotfiles
-stow -nvt ~ zsh tmux
+stow -nvt ~ zsh tmux fzf
 # If everything seems right
-stow -vt ~ zsh tmux
+stow -vt ~ zsh tmux fzf
+```
+
+# FZF
+The general-purpose command-line fuzzy finder [fzf](https://github.com/junegunn/fzf)
+
+# How to install
+
+```bash
+~/.config/fzf/install # Agree everything but modifying zshrc
 ```

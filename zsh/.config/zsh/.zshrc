@@ -16,6 +16,7 @@ mkdir -p $ZSH_CACHE_DIR
 export PATH=$PATH:$HOME/.local/bin
 [ -d "$HOME/.cargo/bin" ] && export PATH=$PATH:$HOME/.cargo/bin
 [ -d "$HOME/.config/fzf/bin" ] && export PATH=$PATH:$HOME/.config/fzf/bin
+[ -d "$HOME/.local/share/nvim/mason/bin" ] && export PATH=$PATH:$HOME/.local/share/nvim/mason/bin/
 export PATH=$PATH:$HOME/.local/share/neovim/bin
 export PATH=$PATH:$HOME/.local/share/pnpm
 export PNPM_HOME=$HOME/.local/share/pnpm

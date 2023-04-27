@@ -15,7 +15,7 @@ return {
     "TSModuleInfo",
     "TSUninstall",
     "TSUpdate",
-    "TSUpdateSync",
+    "TSUpdateSync"
   },
   build = ":TSUpdate",
   opts = {

@@ -6,19 +6,16 @@ return {
     { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
     "mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    {
-      "hrsh7th/cmp-nvim-lsp",
-    },
+    "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
-    require('lspconfig').setup {
-      on_attach = function(client, bufnr)
-        require('lsp.on_attach')(client, bufnr)
-      end,
-      on_save = function(client, bufnr)
-        require('lsp.on_save')(client, bufnr)
-      end,
-
-    }
-  end
+    require("lspconfig").lua_ls.setup({
+      servers = {
+        sumneko_lua = {},
+        pyright = {},
+        black = {},
+        tsserver = {},
+      }
+    })
+  end,
 }

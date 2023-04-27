@@ -3,12 +3,14 @@ return {
   event = 'InsertEnter',
   lazy = true,
   dependencies = {
+    "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    "rafamadriz/friendly-snippets",
     "saadparwaiz1/cmp_luasnip",
   },
-  opts = function ()
+  config = function ()
     local cmp = require("cmp")
       return {
         completion = {
@@ -20,8 +22,8 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert({
-          ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-          ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+          ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+          ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
@@ -34,9 +36,10 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
-          { name = "luasnip" },
+          { name = "luasnip", option = { show_autosnippets = true } },
           { name = "buffer" },
           { name = "path" },
+          { name = "emoji" },
         }),
         experimental = {
           ghost_text = {

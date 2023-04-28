@@ -1,7 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = { "windwp/nvim-ts-autotag", "JoosepAlviste/nvim-ts-context-commentstring" },
-  event = "User AstroFile",
+  --event = "User AstroFile",
+  event = "VeryLazy",
   cmd = {
     "TSBufDisable",
     "TSBufEnable",

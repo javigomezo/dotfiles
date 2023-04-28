@@ -7,7 +7,6 @@ return {
         -- Linting
         -- Python Linting
         require("null-ls").builtins.diagnostics.flake8,
-
         -- Formatting 
         -- Python Formatting
         require("null-ls").builtins.formatting.black,

@@ -1,7 +1,6 @@
 return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
-  lazy = true,
   dependencies = {
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-nvim-lsp",

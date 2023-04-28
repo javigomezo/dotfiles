@@ -19,4 +19,24 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Load plugins
-require('lazy').setup('plugins')
+require('lazy').setup({
+  spec = {
+    { import = 'plugins' }
+  },
+  defaults = {
+    lazy = false,
+    version = false
+  },
+  checker = { enabled = true }, -- automatically check for plugin updates
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        'gzip',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin'
+      }
+    }
+  }
+})

@@ -1,7 +1,7 @@
 return {
   'shaunsingh/nord.nvim',
   name = 'nord',
-  lazy = false,
+  event = 'VimEnter',
   priority = 1000,
   config = function()
     vim.g.nord_contrast = true

@@ -1,51 +1,32 @@
 return {
   'hrsh7th/nvim-cmp',
-  event = 'InsertEnter',
+  event = "InsertEnter",
   dependencies = {
-    "hrsh7th/cmp-emoji",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "rafamadriz/friendly-snippets",
-    "saadparwaiz1/cmp_luasnip",
+    'hrsh7th/cmp-emoji',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+    'rafamadriz/friendly-snippets',
   },
-  config = function ()
-    local cmp = require("cmp")
-      return {
-        completion = {
-          completeopt = "menu,menuone,noinsert",
-        },
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-          ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+  config = function()
+    local cmp = require('cmp')
+    cmp.setup {
+      mapping = cmp.mapping.preset.insert({
+          ["<Up>"] = cmp.mapping.select_prev_item(),
+          ["<Down>"] = cmp.mapping.select_next_item(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-          ["<S-CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-          }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip", option = { show_autosnippets = true } },
-          { name = "buffer" },
-          { name = "path" },
-          { name = "emoji" },
-        }),
-        experimental = {
-          ghost_text = {
-            hl_group = "LspCodeLens",
-          },
-        },
+          ["<C-Esc>"] = cmp.mapping.abort(),
+      }),
+      sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'buffer' },
+        { name = 'path' },
+        { name = 'emoji' },
       }
-    end,
+    }
+  end
 }
-

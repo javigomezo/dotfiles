@@ -12,6 +12,7 @@ return {
         require("null-ls").builtins.diagnostics.eslint_d,
         -- Formatting 
         -- Python Formatting
+        require("null-ls").builtins.formatting.isort,
         require("null-ls").builtins.formatting.black,
         -- JS Formatting
         require("null-ls").builtins.formatting.prettierd,

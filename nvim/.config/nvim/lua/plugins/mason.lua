@@ -12,6 +12,7 @@ return {
         "lua-language-server",
         "flake8",
         "black",
+        "eslint_d"
       },
       ui = {
         icons = {

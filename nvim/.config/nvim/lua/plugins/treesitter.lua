@@ -2,28 +2,24 @@ return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = { "windwp/nvim-ts-autotag", "JoosepAlviste/nvim-ts-context-commentstring" },
   --event = "User AstroFile",
-  event = "VeryLazy",
-  cmd = {
-    "TSBufDisable",
-    "TSBufEnable",
-    "TSBufToggle",
-    "TSDisable",
-    "TSEnable",
-    "TSToggle",
-    "TSInstall",
-    "TSInstallInfo",
-    "TSInstallSync",
-    "TSModuleInfo",
-    "TSUninstall",
-    "TSUpdate",
-    "TSUpdateSync"
-  },
+  event = { "BufReadPost", "BufNewFile" },
   build = ":TSUpdate",
-  opts = {
-    highlight = { enable = true },
-    incremental_selection = { enable = true },
-    indent = { enable = true },
-    autotag = { enable = true },
-    context_commentstring = { enable = true, enable_autocmd = false },
-  },
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
+      context_commentstring = { enable = true, enable_autocmd = false },
+      ensure_installed = {
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "yaml",
+      }
+    })
+  end
 }

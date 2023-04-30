@@ -1,5 +1,6 @@
 return {
   "williamboman/mason.nvim",
+  lazy = true,
   cmd = {"Mason", "MasonInstall"},
   keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
   dependencies = {

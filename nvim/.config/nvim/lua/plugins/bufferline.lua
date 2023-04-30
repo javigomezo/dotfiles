@@ -1,5 +1,6 @@
 return {
   "akinsho/bufferline.nvim",
+  lazy = true,
   event = "VeryLazy",
   dependencies = {'nvim-tree/nvim-web-devicons', 'echasnovski/mini.nvim'},
   keys = {

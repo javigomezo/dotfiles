@@ -1,5 +1,6 @@
 return {
   "jose-elias-alvarez/null-ls.nvim",
+  lazy = true,
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

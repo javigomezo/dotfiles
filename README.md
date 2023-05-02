@@ -10,9 +10,9 @@
 cd ~
 git clone --recurse-submodules -j8 git@github.com:javigomezo/dotfiles.git # Or https://github.com/javigomezo/dotfiles.git 
 cd dotfiles
-stow -nvt ~ zsh tmux fzf
+stow -nvt ~ zsh tmux fzf nvim
 # If everything seems right
-stow -vt ~ zsh tmux fzf
+stow -vt ~ zsh tmux fzf nvim
 ```
 
 # FZF

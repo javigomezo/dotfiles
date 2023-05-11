@@ -1,10 +1,10 @@
 # dotfiles
 
-# Prerequisites
+## Prerequisites
 
 [GNU Stow](https://www.gnu.org/software/stow/)
 
-# How to use
+## How to use
 
 ```bash
 cd ~
@@ -15,10 +15,10 @@ stow -nvt ~ zsh tmux fzf nvim
 stow -vt ~ zsh tmux fzf nvim
 ```
 
-# FZF
+## FZF
 The general-purpose command-line fuzzy finder [fzf](https://github.com/junegunn/fzf)
 
-# How to install
+### How to install
 
 ```bash
 ~/.config/fzf/install # Agree everything but modifying zshrc

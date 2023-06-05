@@ -24,3 +24,17 @@ o.ignorecase = true
 o.smartcase = true
 o.hlsearch = false
 
+-- Show tabs
+o.list = true
+
+-- Disable show mode
+o.showmode = false
+
+-- enable smart indent
+o.smartindent = true
+
+-- Fix markdown indentation settings
+vim.g.markdown_recommended_style = 0
+
+-- Confirm to save
+o.confirm = true

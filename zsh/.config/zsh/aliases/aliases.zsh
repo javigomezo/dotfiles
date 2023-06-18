@@ -39,3 +39,8 @@ then
   alias kubechange='kubectl config use-context '
   alias kubecontext='kubectl config get-contexts'
 fi
+
+if command -v nvidia-smi &> /dev/null
+then
+  alias nvidia-smi='watch -n 1 nvidia-smi'
+fi

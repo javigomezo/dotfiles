@@ -1,3 +1,4 @@
 return {
-  'Exafunction/codeium.vim'
+  'Exafunction/codeium.vim',
+  event = 'BufEnter'
 }

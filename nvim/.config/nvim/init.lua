@@ -27,7 +27,10 @@ require('lazy').setup({
     lazy = false,
     version = false
   },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = {
+    enabled = true,
+    notify = false
+  }, -- automatically check for plugin updates but don't notify
   performance = {
     rtp = {
       disabled_plugins = {

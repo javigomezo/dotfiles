@@ -1,8 +1,8 @@
 return {
   'shaunsingh/nord.nvim',
   name = 'nord',
-  lazy = true,
-  event = 'VimEnter',
+  lazy = false,
+  -- event = 'VimEnter',
   config = function()
     vim.g.nord_contrast = true
     vim.g.nord_borders = true

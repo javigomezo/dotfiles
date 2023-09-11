@@ -31,7 +31,7 @@ export BAT_THEME="Nord"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # bat man :')
 
 # Load all kube-config files
-[ -d "$HOME/.kube" ] && export KUBECONFIG=$(ls -d $HOME/.kube/* | grep config- | tr '\n' ':')
+[ -d "$HOME/.kube" ] && export KUBECONFIG=$(/usr/bin/ls -d $HOME/.kube/* | grep config- | tr '\n' ':')
 
 
 # Configure autocompletion

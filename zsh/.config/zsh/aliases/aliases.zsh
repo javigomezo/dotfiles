@@ -11,9 +11,9 @@ then
   alias df='duf'
 fi
 
-if command -v exa &> /dev/null
+if command -v eza &> /dev/null
 then
-  alias ls='exa --color=always --icons --group-directories-first'
+  alias ls='eza --color=always --icons --group-directories-first'
 fi
 
 alias la='ls -a'

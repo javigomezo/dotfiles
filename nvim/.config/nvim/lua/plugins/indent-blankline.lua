@@ -2,9 +2,26 @@ return {
   "lukas-reineke/indent-blankline.nvim",
   lazy = true,
   event = { "BufReadPost", "BufNewFile" },
-  config = function()
-    require("indent_blankline").setup({
+   opts = {
+    indent = {
       char = "│",
-    })
-  end
+      tab_char = "│",
+    },
+    scope = { enabled = false },
+    exclude = {
+      filetypes = {
+        "help",
+        "alpha",
+        "dashboard",
+        "neo-tree",
+        "Trouble",
+        "lazy",
+        "mason",
+        "notify",
+        "toggleterm",
+        "lazyterm",
+      },
+    },
+  },
+  main = "ibl",
 }

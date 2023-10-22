@@ -3,11 +3,11 @@ return {
   lazy = true,
   cmd = "Telescope",
   dependencies = { 'nvim-lua/plenary.nvim' },
-  pickers = {
-    find_files = {
-      hidden = true
-    }
-  },
+  -- pickers = {
+  --   find_files = {
+  --     hidden = true
+  --   }
+  -- },
   keys = {
     { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find files' },
     { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Live grep' },

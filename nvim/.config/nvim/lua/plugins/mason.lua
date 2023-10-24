@@ -1,7 +1,7 @@
 return {
   "williamboman/mason.nvim",
   lazy = true,
-  cmd = {"Mason", "MasonInstall"},
+  cmd = { "Mason", "MasonInstall" },
   keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
@@ -14,18 +14,19 @@ return {
       "flake8",
       "black",
       "isort",
-      "eslint_d"
+      "eslint_d",
+      "prettier",
     },
     ui = {
       icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗"
-      }
-    }
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗",
+      },
+    },
   },
   config = function(_, opts)
-    require('mason').setup(opts)
+    require("mason").setup(opts)
     local mr = require("mason-registry")
     local function ensure_installed()
       for _, tool in ipairs(opts.ensure_installed) do
@@ -40,5 +41,5 @@ return {
     else
       ensure_installed()
     end
-  end
+  end,
 }

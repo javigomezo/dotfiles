@@ -16,6 +16,7 @@ return {
       "isort",
       "eslint_d",
       "prettier",
+      "ansible-lint",
     },
     ui = {
       icons = {

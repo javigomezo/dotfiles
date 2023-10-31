@@ -54,7 +54,7 @@ source $ZSH/aliases/aliases.zsh
 source $ZSH/functions/firefox.zsh
 
 # Theme
-source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
+# source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 # Set nord colors
 test -r "~/.config/zsh/colors/nord_colors.zsh" && eval $(dircolors -b ~/.config/zsh/colors/nord_colors.zsh)
@@ -85,4 +85,6 @@ if [[ $- == *i* ]] && command -v nitch > /dev/null; then
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+# [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+eval "$(starship init zsh)"

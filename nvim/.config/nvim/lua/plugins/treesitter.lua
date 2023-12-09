@@ -13,14 +13,14 @@ return {
       indent = {
         enable = true,
       },
-      context_commentstring = { enable = true, enable_autocmd = false },
+      -- context_commentstring = { enable = true, enable_autocmd = false },
       ensure_installed = {
         "lua",
         "markdown",
         "markdown_inline",
         "python",
         "yaml",
-      }
+      },
     })
-  end
+  end,
 }

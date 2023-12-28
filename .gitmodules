@@ -7,12 +7,6 @@
 [submodule "zsh/.config/zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/.config/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "tmux/plugins/tpm"]
-	path = tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
-[submodule "tmux/.config/tmux/plugins/tpm"]
-	path = tmux/.config/tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
 [submodule "fzf/.config/fzf"]
 	path = fzf/.config/fzf
 	url = https://github.com/junegunn/fzf.git

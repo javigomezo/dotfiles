@@ -17,6 +17,7 @@ return {
   opts = {
     -- Define your formatters
     formatters_by_ft = {
+      astro = { { "prettier", "prettierd" } },
       lua = { "stylua" },
       python = { "isort", "black" },
       javascript = { { "prettierd", "prettier" } },
@@ -30,6 +31,14 @@ return {
     formatters = {
       shfmt = {
         prepend_args = { "-i", "2" },
+      },
+      prettier = {
+        args = function(ctx)
+          if vim.endswith(ctx.filename, ".astro") then
+            return { "--stdin-filepath", "$FILENAME", "--parser", "html" }
+          end
+          return { "--stdin-filepath", "$FILENAME" }
+        end,
       },
     },
   },

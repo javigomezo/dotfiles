@@ -26,9 +26,6 @@ return {
       },
       servers = {
         sumneko_lua = {},
-        pyright = {},
-        black = {},
-        tsserver = {},
       },
       autoformat = true,
       format = {
@@ -36,5 +33,9 @@ return {
         timeout_ms = nil,
       },
     })
+
+    require("lspconfig").tailwindcss.setup({})
+    require("lspconfig").astro.setup({})
+    require("lspconfig").pyright.setup({})
   end,
 }

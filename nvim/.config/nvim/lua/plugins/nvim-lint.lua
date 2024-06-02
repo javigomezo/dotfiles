@@ -8,6 +8,7 @@ return {
     lint.linters_by_ft = {
       python = { "flake8" },
       javascript = { "eslint" },
+      -- nix = { "nix" },
       ["yaml.ansible"] = { "ansible_lint" },
     }
 

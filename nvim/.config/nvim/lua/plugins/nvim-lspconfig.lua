@@ -13,7 +13,7 @@ return {
     require("lspconfig").lua_ls.setup({
       diagnostics = {
         underline = true,
-        update_in_insert = true,
+        update_in_insert = false,
         virtual_text = {
           spacing = 8,
           source = "if_many",
@@ -24,8 +24,48 @@ return {
         },
         severity_sort = true,
       },
+      inlay_hints = {
+        enabled = true,
+      },
+      codelens = {
+        enabled = false,
+      },
       servers = {
-        sumneko_lua = {},
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                useLibraryCodeForTypes = true,
+              },
+            },
+          },
+        },
+        lua_ls = {
+          settings = {
+            Lua = {
+              workspace = {
+                checkThirdParty = false,
+              },
+              codeLens = {
+                enable = true,
+              },
+              completion = {
+                callSnippet = "Replace",
+              },
+              doc = {
+                privateName = { "^_" },
+              },
+              hint = {
+                enable = true,
+                setType = false,
+                paramType = true,
+                paramName = "Disable",
+                semicolon = "Disable",
+                arrayIndex = "Disable",
+              },
+            },
+          },
+        },
       },
       autoformat = true,
       format = {
@@ -37,5 +77,6 @@ return {
     require("lspconfig").tailwindcss.setup({})
     require("lspconfig").astro.setup({})
     require("lspconfig").pyright.setup({})
+    require("lspconfig").rnix.setup({})
   end,
 }

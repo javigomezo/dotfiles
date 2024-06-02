@@ -7,7 +7,11 @@ return {
       -- Customize or remove this keymap to your liking
       "<leader>f",
       function()
-        require("conform").format({ async = true, lsp_fallback = true })
+        require("conform").format({
+          async = false,
+          quiet = false,
+          lsp_fallback = true,
+        })
       end,
       mode = "",
       desc = "Format buffer",
@@ -24,11 +28,13 @@ return {
       javascriptreact = { "prettier" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
+      nix = { "alejandra" },
     },
     -- Set up format-on-save
     format_on_save = { timeout_ms = 500, lsp_fallback = true },
     -- Customize formatters
     formatters = {
+      injected = { options = { ignore_errors = true } },
       shfmt = {
         prepend_args = { "-i", "2" },
       },

@@ -1,5 +1,5 @@
 return {
-  'wakatime/vim-wakatime',
-  lazy = true,
-  event = { "BufReadPre", "BufNewFile" },
+  -- 'wakatime/vim-wakatime',
+  -- lazy = true,
+  -- event = { "BufReadPre", "BufNewFile" },
 }

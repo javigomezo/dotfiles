@@ -3,8 +3,8 @@ return {
   lazy = true,
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-    { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
+    { "folke/neoconf.nvim", cmd = "Neoconf",                                config = true },
+    { "folke/neodev.nvim",  opts = { experimental = { pathStrict = true } } },
     "mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
@@ -31,6 +31,7 @@ return {
         enabled = false,
       },
       servers = {
+        nixd = {},
         pyright = {
           settings = {
             python = {
@@ -77,6 +78,6 @@ return {
     require("lspconfig").tailwindcss.setup({})
     require("lspconfig").astro.setup({})
     require("lspconfig").pyright.setup({})
-    require("lspconfig").rnix.setup({})
+    require("lspconfig").nixd.setup({})
   end,
 }
